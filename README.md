@@ -6,8 +6,8 @@ Upload NFTs automatically to OpenSea using their lazy mint function.
 
 ## Quick note
 * This program works only with FireFox at this moment. Don't try using any chrome based browser or anything else, it won't work.
-
 * You need an empty OpenSea collection already created.
+* I included the most recent MetaMask extension inside the 'metamask' directory, feel free to delete it and [download](https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/) it again. You will need to open the link using FireFox, right click the download button and click "save as..".
 
 ## Installation
 
