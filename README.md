@@ -2,6 +2,8 @@
 
 Upload NFTs automatically to OpenSea using their lazy mint function.
 
+![LOU](https://user-images.githubusercontent.com/88213417/146703524-908f635c-0e20-4720-aede-f36827420c38.png)
+
 ## Quick note
 * This program works only with FireFox at this moment. Don't try using any chrome based browser or anything else, it won't work.
 
@@ -44,6 +46,11 @@ python main.py
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+## Donations
+Did you find this script useful? Did your project went to the moon? Buy me a pizza! 
+
+ETH: 0x5a7d97C88e9dbBE1748Fb24D5fb7875745d7A152
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
