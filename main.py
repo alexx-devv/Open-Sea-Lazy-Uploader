@@ -31,31 +31,31 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
 import json, time, os, shutil, sys
 
-# if "uploaded" not in os.listdir():
-#     os.mkdir("uploaded")
+if "uploaded" not in os.listdir():
+    os.mkdir("uploaded")
 
-# if "images" not in os.listdir("uploaded"):
-#     os.mkdir("uploaded/images")
+if "images" not in os.listdir("uploaded"):
+    os.mkdir("uploaded/images")
 
-# if "metadata" not in os.listdir("uploaded"):
-#     os.mkdir("uploaded/metadata")
+if "metadata" not in os.listdir("uploaded"):
+    os.mkdir("uploaded/metadata")
 
-# if "images" not in os.listdir():
-#     os.mkdir("images")
+if "images" not in os.listdir():
+    os.mkdir("images")
 
-# if "metadata" not in os.listdir():
-#     os.mkdir("metadata")
+if "metadata" not in os.listdir():
+    os.mkdir("metadata")
 
-# if len(os.listdir("images")) == 0:
-#     print("----------------------------------------")
-#     sys.exit("ERROR: 'images' folder empty.")
+if len(os.listdir("images")) == 0:
+    print("----------------------------------------")
+    sys.exit("ERROR: 'images' folder empty.")
  
-# if len(os.listdir("metadata/")) == 0:
-#     print("----------------------------------------")
-#     sys.exit("ERROR: 'metadata' folder empty.")
+if len(os.listdir("metadata/")) == 0:
+    print("----------------------------------------")
+    sys.exit("ERROR: 'metadata' folder empty.")
 
-# if len(os.listdir("metadata")) != len(os.listdir("images")):
-#     sys.exit("ERROR: Amount of images and metadata files need to be the same.")
+if len(os.listdir("metadata")) != len(os.listdir("images")):
+    sys.exit("ERROR: Amount of images and metadata files need to be the same.")
 
 print("----------------------------------------")
 collectionLink = input("Collection link: ")
