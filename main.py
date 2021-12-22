@@ -31,46 +31,77 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.service import Service
 import json, time, os, shutil, sys
 
-if "uploaded" not in os.listdir():
-    os.mkdir("uploaded")
+# if "uploaded" not in os.listdir():
+#     os.mkdir("uploaded")
 
-if "images" not in os.listdir("uploaded"):
-    os.mkdir("uploaded/images")
+# if "images" not in os.listdir("uploaded"):
+#     os.mkdir("uploaded/images")
 
-if "metadata" not in os.listdir("uploaded"):
-    os.mkdir("uploaded/metadata")
+# if "metadata" not in os.listdir("uploaded"):
+#     os.mkdir("uploaded/metadata")
 
-if "images" not in os.listdir():
-    os.mkdir("images")
+# if "images" not in os.listdir():
+#     os.mkdir("images")
 
-if "metadata" not in os.listdir():
-    os.mkdir("metadata")
+# if "metadata" not in os.listdir():
+#     os.mkdir("metadata")
 
-if len(os.listdir("images")) == 0:
-    print("----------------------------------------")
-    sys.exit("ERROR: 'images' folder empty.")
+# if len(os.listdir("images")) == 0:
+#     print("----------------------------------------")
+#     sys.exit("ERROR: 'images' folder empty.")
  
-if len(os.listdir("metadata/")) == 0:
-    print("----------------------------------------")
-    sys.exit("ERROR: 'metadata' folder empty.")
+# if len(os.listdir("metadata/")) == 0:
+#     print("----------------------------------------")
+#     sys.exit("ERROR: 'metadata' folder empty.")
 
-if len(os.listdir("metadata")) != len(os.listdir("images")):
-    sys.exit("ERROR: Amount of images and metadata files need to be the same.")
+# if len(os.listdir("metadata")) != len(os.listdir("images")):
+#     sys.exit("ERROR: Amount of images and metadata files need to be the same.")
 
 print("----------------------------------------")
 collectionLink = input("Collection link: ")
 
+print("----------------------------------------")
+print("Choose your operative system:")
+print("Linux    [1]")
+print("Windows  [2]")
+print("Mac      [3]")
+currentOS = input("[1, 2 or 3]: ")
 
-# ------- LINUX -------
+if currentOS == "1":
+    # ------- LINUX -------
 
-# Firefox users
-options = webdriver.FirefoxOptions()
-options.add_argument("--disable-blink-features=AutomationControlled")
-driver = webdriver.Firefox(service=Service("drivers/linux/geckodriver"), options=options)
-driver.execute("INSTALL_ADDON", {"path": f"{os.getcwd()}/metamask/metamask-10.8.0-an+fx.xpi"})
-driver.get("https://opensea.io/login?referrer=%2Faccount")
+    # Firefox users
+    options = webdriver.FirefoxOptions()
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    driver = webdriver.Firefox(service=Service("drivers/linux/geckodriver"), options=options)
+    driver.execute("INSTALL_ADDON", {"path": f"{os.getcwd()}/metamask/metamask-10.8.0-an+fx.xpi"})
+    driver.get("https://opensea.io/login?referrer=%2Faccount")
 
-# ------- LINUX -------
+    # ------- LINUX -------
+
+if currentOS == "2":
+    # ------- Windows -------
+
+    # Firefox users
+    options = webdriver.FirefoxOptions()
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    driver = webdriver.Firefox(service=Service("drivers/windows/geckodriver.exe"), options=options)
+    driver.execute("INSTALL_ADDON", {"path": f"{os.getcwd()}/metamask/metamask-10.8.0-an+fx.xpi"})
+    driver.get("https://opensea.io/login?referrer=%2Faccount")
+
+    # ------- Windows -------
+
+if currentOS == "3":
+    # ------- Mac -------
+
+    # Firefox users
+    options = webdriver.FirefoxOptions()
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    driver = webdriver.Firefox(service=Service("drivers/mac/geckodriver"), options=options)
+    driver.execute("INSTALL_ADDON", {"path": f"{os.getcwd()}/metamask/metamask-10.8.0-an+fx.xpi"})
+    driver.get("https://opensea.io/login?referrer=%2Faccount")
+
+    # ------- Mac -------
 
 # Variables
 secretPhrase = json.load(open(f"login-info.json", mode="r"))["phrase"]
